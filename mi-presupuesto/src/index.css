@@ -1,0 +1,78 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1f2937;
+  --primary: #0ea5e9;
+  --muted: #6b7280;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.theme-dark {
+  --bg: #0b1020;
+  --fg: #e5e7eb;
+  --primary: #38bdf8;
+  --muted: #9ca3af;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  min-height: 100vh;
+}
+
+.app__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.app__title {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.app__theme-toggle {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.15);
+  color: inherit;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+}
+
+.app__nav {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.nav__link {
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+}
+.nav__link--active {
+  background: rgba(14,165,233,0.12);
+}
+
+.app__main {
+  padding: 1rem 1.25rem;
+}
