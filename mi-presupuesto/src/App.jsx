@@ -3,6 +3,7 @@ import { Routes, Route, NavLink } from 'react-router-dom'
 import { useTheme } from './context/ThemeContext.jsx'
 import Home from './pages/Home.jsx'
 import NewMovement from './pages/NewMovement.jsx'
+import EditMovement from './pages/EditMovement.jsx'
 import Summary from './pages/Summary.jsx'
 import Settings from './pages/Settings.jsx'
 
@@ -35,6 +36,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/nuevo" element={<NewMovement />} />
+          <Route path="/editar/:id" element={<EditMovement />} />
           <Route path="/resumen" element={<Summary />} />
           <Route path="/ajustes" element={<Settings />} />
         </Routes>
