@@ -12,7 +12,7 @@ const schema = yup.object({
   date: yup.date().typeError('Fecha inválida').max(new Date(), 'No puede ser futura').required('Requerido'),
 })
 
-export default function NewMovement() {
+export default function NuevoMovimiento() {
   const navigate = useNavigate()
   const [movements, setMovements] = useLocalStorage('mp_movements', [])
   const { register, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(schema) })

@@ -33,7 +33,11 @@ export default function Home() {
             </div>
             <div role="cell" className="badge" aria-label={`Tipo ${m.type}`}>{m.type}</div>
             <div role="cell">{new Date(m.date).toLocaleDateString()}</div>
-            <div role="cell" className="amount" aria-label={`Monto ${m.amount}`}>
+            <div
+              role="cell"
+              className={`amount ${m.type === 'gasto' ? 'amount--gasto' : 'amount--ingreso'}`}
+              aria-label={`Monto ${m.amount}`}
+            >
               {m.type === 'gasto' ? '-' : '+'}${m.amount.toLocaleString('es-AR')}
             </div>
             <div role="cell" style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>

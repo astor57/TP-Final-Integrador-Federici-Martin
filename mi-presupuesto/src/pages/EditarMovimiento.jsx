@@ -12,7 +12,7 @@ const schema = yup.object({
   date: yup.date().typeError('Fecha inválida').max(new Date(), 'No puede ser futura').required('Requerido'),
 })
 
-export default function EditMovement() {
+export default function EditarMovimiento() {
   const { id } = useParams()
   const navigate = useNavigate()
   const [movements, setMovements] = useLocalStorage('mp_movements', [])
