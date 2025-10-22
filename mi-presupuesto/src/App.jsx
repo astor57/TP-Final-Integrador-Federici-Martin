@@ -4,7 +4,6 @@ import { useTheme } from './context/ThemeContext.jsx'
 import Home from './pages/Home.jsx'
 import NewMovement from './pages/NewMovement.jsx'
 import EditMovement from './pages/EditMovement.jsx'
-import Summary from './pages/Summary.jsx'
 import Settings from './pages/Settings.jsx'
 
 function App() {
@@ -25,9 +24,6 @@ function App() {
         <NavLink to="/nuevo" className={({ isActive }) => isActive ? 'nav__link nav__link--active' : 'nav__link'}>
           Nuevo
         </NavLink>
-        <NavLink to="/resumen" className={({ isActive }) => isActive ? 'nav__link nav__link--active' : 'nav__link'}>
-          Resumen
-        </NavLink>
         <NavLink to="/ajustes" className={({ isActive }) => isActive ? 'nav__link nav__link--active' : 'nav__link'}>
           Ajustes
         </NavLink>
@@ -37,7 +33,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/nuevo" element={<NewMovement />} />
           <Route path="/editar/:id" element={<EditMovement />} />
-          <Route path="/resumen" element={<Summary />} />
           <Route path="/ajustes" element={<Settings />} />
         </Routes>
       </main>
