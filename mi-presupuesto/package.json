@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "chart.js": "^4.5.1",
+    "formik": "^2.4.6",
     "react": "^19.1.1",
     "react-chartjs-2": "^5.3.1",
     "react-dom": "^19.1.1",
-    "react-router-dom": "^7.9.4"
+    "react-router-dom": "^7.9.4",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

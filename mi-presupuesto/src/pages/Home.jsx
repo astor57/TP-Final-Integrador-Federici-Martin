@@ -17,9 +17,24 @@ export default function Home() {
     }
   }, [])
 
+  function handleDelete(id) {
+    setMovements(movements.filter((m) => m.id !== id))
+  }
+
+  function handleDeleteAll() {
+    if (movements.length === 0) return
+    const ok = confirm('¿Eliminar todos los movimientos? Esta acción no se puede deshacer.')
+    if (ok) setMovements([])
+  }
+
   return (
     <div>
-      <h2>Listado</h2>
+      <h2 style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <span>Listado</span>
+        <button onClick={handleDeleteAll} disabled={movements.length === 0} aria-label="Eliminar todos">
+          Eliminar todos
+        </button>
+      </h2>
       <div className="list" role="table" aria-label="Movimientos">
         {movements.map((m) => (
           <div key={m.id} className="list__row" role="row">
@@ -31,6 +46,9 @@ export default function Home() {
             <div role="cell">{new Date(m.date).toLocaleDateString()}</div>
             <div role="cell" className="amount" aria-label={`Monto ${m.amount}`}>
               {m.type === 'gasto' ? '-' : '+'}${m.amount.toLocaleString('es-AR')}
+            </div>
+            <div role="cell">
+              <button onClick={() => handleDelete(m.id)} aria-label={`Eliminar ${m.description}`}>🗑️</button>
             </div>
           </div>
         ))}
